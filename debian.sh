@@ -1,5 +1,5 @@
 #!/bin/bash
-# ~sivoi~
+# Mod By M Fauzan
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
@@ -134,7 +134,7 @@ service stunnel4 restart
 apt-get -y install fail2ban;
 service fail2ban restart
 
-# install squid3
+# install squid
 cd
 apt-get -y install squid3
 wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/Y4suf/script/master/squid3.conf"
@@ -227,7 +227,7 @@ echo "unset HISTFILE" >> /etc/profile
 clear
 
 # info
-echo "~sivoi~"
+echo "~m fauzan~"
 echo "Autoscript Include:" | tee log-install.txt
 echo "===========================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
