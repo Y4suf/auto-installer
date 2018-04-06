@@ -1,5 +1,5 @@
 #!/bin/bash
-# Mod By M Fauzan
+# Mod By Orang Ganteng | 0895703796928
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
@@ -58,7 +58,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Y4suf/script/master/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>~sivoi~</pre>" > /home/vps/public_html/index.html
+echo "<pre>~Setup By Orang Ganteng | 0895703796928~</pre>" > /home/vps/public_html/index.html
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Y4suf/script/master/vps.conf"
 service nginx restart
 
@@ -111,7 +111,7 @@ service dropbear restart
 
 # install dropbear 2017
 cd
-wget https://raw.githubusercontent.com/kholizsivoi/script/master/dropbear-2017.75.tar.bz2
+wget https://raw.githubusercontent.com/Y4suf/script/master/dropbear-2017.75.tar.bz2
 apt-get install zlib1g-dev
 bzip2 -cd dropbear-2017.75.tar.bz2  | tar xvf -
 cd dropbear-2017.75
@@ -149,21 +149,6 @@ apt-get -y -f install;
 rm /root/webmin_1.850_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
-
-# blockir torrent
-iptables -A OUTPUT -p tcp --dport 6881:6889 -j DROP
-iptables -A OUTPUT -p udp --dport 1024:65534 -j DROP
-iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
-iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
-iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
-iptables -A FORWARD -m string --algo bm --string "BitTorrent" -j DROP
-iptables -A FORWARD -m string --algo bm --string "BitTorrent protocol" -j DROP
-iptables -A FORWARD -m string --algo bm --string "peer_id=" -j DROP
-iptables -A FORWARD -m string --algo bm --string ".torrent" -j DROP
-iptables -A FORWARD -m string --algo bm --string "announce.php?passkey=" -j DROP
-iptables -A FORWARD -m string --algo bm --string "torrent" -j DROP
-iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
-iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
 
 # install ddos deflate
 cd
@@ -227,7 +212,7 @@ echo "unset HISTFILE" >> /etc/profile
 clear
 
 # info
-echo "~m fauzan~"
+echo "Mod By Orang Ganteng | 0895703796928"
 echo "Autoscript Include:" | tee log-install.txt
 echo "===========================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
